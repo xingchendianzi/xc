@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>笔记本清灰保养价格表 | 专业除尘+导热升级</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #e0e5ec 0%, #f0f4fa 100%);
+            font-family: 'Segoe UI', 'Roboto', 'Poppins', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 24px;
+            overflow-x: hidden;
+        }
+
+        .price-card-container {
+            max-width: 1100px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 48px 48px 40px 40px;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .header {
+            background: #1e2a3e;
+            background: linear-gradient(135deg, #0f2b3d 0%, #1b3b4f 100%);
+            padding: 28px 32px 20px;
+            text-align: center;
+            color: white;
+            border-bottom: 4px solid #f5b042;
+        }
+
+        .header h1 {
+            font-size: 2.1rem;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header h1 span {
+            background: #f5b04220;
+            padding: 4px 12px;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 500;
+            backdrop-filter: blur(2px);
+        }
+
+        .header p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+
+        .badge {
+            background-color: #ffb74d;
+            color: #1e2a3e;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        .contact-bar {
+            background: #fff8ef;
+            border-bottom: 1px solid #ffdfb0;
+            padding: 14px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 18px;
+            row-gap: 8px;
+        }
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffffd9;
+            padding: 6px 16px;
+            border-radius: 60px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            font-weight: 500;
+        }
+        .contact-item a {
+            text-decoration: none;
+            color: #c2410c;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .copy-btn {
+            background: #eef2f8;
+            border: none;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s;
+            margin-left: 6px;
+        }
+        .copy-btn:hover {
+            background: #ffdec2;
+        }
+        .wechat-tip {
+            background: #eef2fa;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #2c5f8a;
+        }
+
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 32px 28px 28px;
+            gap: 28px;
+            background: #ffffff;
+        }
+
+        .plan {
+            flex: 1;
+            min-width: 260px;
+            background: #fefefe;
+            border-radius: 32px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eef2f8;
+            overflow: hidden;
+        }
+
+        .plan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+            border-color: #dce5ef;
+        }
+
+        .plan-header {
+            padding: 20px 20px 12px;
+            text-align: center;
+            border-bottom: 2px solid #eff3f8;
+        }
+
+        .plan-header h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .plan-header .sub {
+            font-size: 0.85rem;
+            color: #5f6c80;
+            margin-top: 8px;
+            background: #f0f4fa;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 60px;
+        }
+
+        .silicon-bg {
+            color: #2c5f8a;
+        }
+        .liquid-bg {
+            color: #c2410c;
+        }
+
+        .price-area {
+            text-align: center;
+            padding: 20px 20px 12px;
+            background: #ffffff;
+        }
+        .main-price {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #1f2d3d;
+            line-height: 1;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .main-price small {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #5f6c80;
+        }
+        .price-note {
+            font-size: 0.75rem;
+            color: #6c7a91;
+            margin-top: 8px;
+            background: #f8fafd;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .silicon-variants {
+            padding: 10px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .variant-item {
+            background: #f9fbfe;
+            border-radius: 24px;
+            padding: 14px 16px;
+            border: 1px solid #e9edf2;
+            transition: 0.1s;
+        }
+        .variant-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .variant-name {
+            font-size: 1.1rem;
+            color: #1e2f41;
+        }
+        .variant-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #2c5f8a;
+        }
+        .variant-price small {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .variant-detail {
+            font-size: 0.8rem;
+            color: #5b6b84;
+            border-top: 1px dashed #e2e8f0;
+            margin-top: 8px;
+            padding-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .label {
+            font-weight: 600;
+            color: #2d3e5f;
+        }
+        .highlight-text {
+            background: #ffefd6;
+            padding: 2px 6px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.75rem;
+            color: #b45f1b;
+            margin-left: 6px;
+        }
+
+        .service-list {
+            padding: 12px 24px 24px;
+            background: #ffffff;
+            border-top: 1px solid #edf2f7;
+        }
+        .service-list h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1e2a3e;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .service-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .service-list li {
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #2c3e50;
+        }
+        .service-list li::before {
+            content: "✔️";
+            color: #2c7a4d;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .liquid-total {
+            text-align: center;
+            background: #fff7ed;
+            margin: 0 20px 16px;
+            border-radius: 40px;
+            padding: 18px 12px;
+            border: 1px solid #ffe4bf;
+        }
+        .liquid-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #c2410c;
+        }
+        .liquid-desc {
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 6px;
+            color: #8b5a2b;
+        }
+        .inline-calc {
+            font-size: 0.75rem;
+            background: #ffffffc9;
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 20px;
+            color: #7f4f24;
+        }
+
+        .footer-note {
+            background: #f8fafc;
+            padding: 18px 28px;
+            border-top: 1px solid #e9edf2;
+            font-size: 0.75rem;
+            color: #4a5b74;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        .footnote {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .warning {
+            background: #fff0db;
+            border-radius: 50px;
+            padding: 5px 12px;
+            font-weight: 500;
+        }
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e2a3e;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+
+        @media (max-width: 780px) {
+            .pricing-grid {
+                padding: 20px;
+                gap: 20px;
+            }
+            .main-price {
+                font-size: 2.5rem;
+            }
+            .variant-price {
+                font-size: 1.5rem;
+            }
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            .contact-bar {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 640px) {
+            .plan-header h2 {
+                font-size: 1.4rem;
+            }
+            .footer-note {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="price-card-container">
+    <div class="header">
+        <h1>
+            🧼 笔记本深度清灰 · 导热介质升级
+            <span>明码标价</span>
+        </h1>
+        <p>全机除尘 + 散热焕新 · 专业工具无损伤</p>
+        <div class="badge">⭐ 到店即享，无隐形费用 ⭐</div>
+    </div>
+
+    <div class="contact-bar">
+        <div class="contact-info">
+            <div class="contact-item">
+                📞 电话/微信同号：
+                <a href="tel:18948331434">189-4833-1434</a>
+                <button class="copy-btn" onclick="copyToClipboard('18948331434')">📋 复制号码</button>
+            </div>
+            <div class="contact-item">
+                💬 微信同号
+                <button class="copy-btn" onclick="copyToClipboard('18948331434')">复制微信号</button>
+            </div>
+            <div class="wechat-tip">
+                ⚡ 添加微信备注“笔记本清灰”优先排期
+            </div>
+        </div>
+        <div style="font-size:0.7rem; color:#b97f2e;">📞 点击号码可直接呼叫 | 营业时间 9:30-19:00</div>
+    </div>
+
+    <div class="pricing-grid">
+        <div class="plan">
+            <div class="plan-header">
+                <h2 class="silicon-bg">💨 硅脂导热方案</h2>
+                <div class="sub">风冷/常规散热 · 标准升级</div>
+            </div>
+            <div class="price-area">
+                <div style="font-size:0.8rem; color:#4b6a8b;">✨ 最终应付总价 ✨</div>
+            </div>
+            <div class="silicon-variants">
+                <div class="variant-item">
+                    <div class="variant-title">
+                        <span class="variant-name">🔧 普通硅脂套餐</span>
+                        <span class="variant-price">¥90 <small>元</small></span>
+                    </div>
+                    <div class="variant-detail">
+                        <span><span class="label">清灰60</span> + <span class="label">普通硅脂5</span> + <span class="label">手工费25</span></span>
+                        <span class="highlight-text">经济实用</span>
+                    </div>
+                </div>
+                <div class="variant-item">
+                    <div class="variant-title">
+                        <span class="variant-name">🏆 品牌硅脂套餐</span>
+                        <span class="variant-price">¥100 <small>元</small></span>
+                    </div>
+                    <div class="variant-detail">
+                        <span><span class="label">清灰60</span> + <span class="label">品牌硅脂15</span> + <span class="label">手工费25</span></span>
+                        <span class="highlight-text">导热更强 更耐久</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-list">
+                <h4>📦 基础清灰服务（已包含）</h4>
+                <ul>
+                    <li>A壳(上盖) / B壳(屏幕) / C壳(键盘面) / D壳(后盖) 全方位除尘</li>
+                    <li>风扇模组深度清洁 + 主板整体无尘处理</li>
+                    <li>✅ 清除旧硅脂 + 涂抹新硅脂施工（手工费已含）</li>
+                    <li>散热模组重新安装 & 静音检测</li>
+                </ul>
+                <div style="margin-top: 6px; font-size:12px; background:#eff3fa; border-radius: 20px; padding: 6px 10px; text-align:center; color:#2e4a6b;">
+                    💡 硅脂套餐总价 = 清灰 ¥60 + 硅脂材料费 + 手工费 ¥25
+                </div>
+            </div>
+        </div>
+
+        <div class="plan">
+            <div class="plan-header">
+                <h2 class="liquid-bg">💧 液金导热方案</h2>
+                <div class="sub">原厂液金机型 · 专业维保</div>
+            </div>
+            <div class="liquid-total">
+                <div style="font-size:0.9rem; font-weight:500; letter-spacing:1px;">💎 一站式全包总价</div>
+                <div class="liquid-price">¥150</div>
+                <div class="liquid-desc">( 包含清灰 + 清理液金 + 更换两处相变片 )</div>
+                <div class="inline-calc" style="margin-top:8px;">⚙️ 明细：清灰60 + 清理液金50 + 相变片2处×20=40</div>
+            </div>
+            <div class="service-list" style="border-top: none; padding-top: 0;">
+                <h4>✅ 液金方案全套服务内容</h4>
+                <ul>
+                    <li>全机深度清灰 (A/B/C/D壳、风扇、主板整体) —— 同硅脂标准</li>
+                    <li>🔁 专业清除原有液态金属残留，清洁散热模组</li>
+                    <li>🔄 更换高性能相变片 (CPU + GPU 两处，共¥40价值)</li>
+                    <li>🔬 防漏绝缘处理 & 压力测试，确保液金清理彻底安全</li>
+                    <li>💡 相变片替代液金，稳定不导电，兼具高效导热</li>
+                </ul>
+                <div style="margin-top: 12px; background: #fef3e2; border-radius: 18px; padding: 8px 12px; font-size: 0.75rem; color: #aa5c1c;">
+                    ⚡ 特别说明：液态金属清理工艺复杂，此价格已包含所有施工及相变片耗材，无后续加价。
+                </div>
+            </div>
+            <div style="padding: 8px 24px 24px 24px;">
+                <div style="background:#f1f5f9; border-radius: 24px; padding: 10px 14px; font-size: 0.7rem; color: #2c3e66;">
+                    📌 注：液金方案适用于原厂采用液态金属散热的笔记本（如部分游戏本/高端机型），
+                    清理后更换相变片，兼具性能与安全。普通笔记本推荐硅脂方案（性价比高）。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <div class="footnote">
+            <span>🧽 清灰 ¥60 包含：ABCD四壳 + 风扇 + 主板全面除尘</span>
+            <span>🛠️ 硅脂方案手工费 ¥25 (更换硅脂/清理旧硅脂施工)</span>
+            <span>🧴 品牌硅脂导热系数＞6W/m·K，普通硅脂＞3W/m·K</span>
+        </div>
+        <div class="warning">
+            ⏱️ 所有操作约40~70分钟 | 最终解释权以门店实际为准
+        </div>
+    </div>
+    <div style="background: #ffffff; text-align: center; padding: 14px 20px 20px; font-size: 0.8rem; border-top: 1px solid #eef2f8; color: #3c5a7d;">
+        ⭐ 一键看懂：<strong>普通硅脂清灰换好 = 90元，品牌硅脂 = 100元，液金专业清理+换相变片全包 = 150元</strong> ⭐<br/>
+        <span style="display: inline-block; margin-top: 6px;">📱 欢迎致电或添加微信 <strong style="color:#c2410c;">18948331434</strong> 预约咨询，微信同号！</span>
+    </div>
+</div>
+<div id="toastMsg" class="toast-msg">✅ 已复制到剪贴板</div>
+
+<script>
+    function copyToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('✅ 号码已复制: ' + text);
+            }).catch(() => {
+                fallbackCopy(text);
+            });
+        } else {
+            fallbackCopy(text);
+        }
+    }
+
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('📋 复制成功: ' + text);
+    }
+
+    function showToast(msg) {
+        let toast = document.getElementById('toastMsg');
+        toast.style.opacity = '1';
+        toast.innerText = msg;
+        setTimeout(() => {
+            toast.style.opacity = '0';
+        }, 1800);
+    }
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    });
+</script>
+</body>
+</html>
